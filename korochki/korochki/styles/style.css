@@ -1,0 +1,557 @@
+/* =========================================================
+   Корочки.есть — базовые стили
+   ========================================================= */
+
+/* ---------- Сброс и базовая типографика ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #222;
+    background: #fafafa;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: #0057d8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================================
+   ШАПКА
+   ========================================================= */
+.site-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 15px 20px;
+
+    padding: 15px 24px 15px 24px; 
+    background: #fff2cc;
+    border-bottom: 2px solid #d6b656;
+}
+
+/* Логотип */
+.header-logo {
+    grid-column: 1;
+    grid-row: 1; /* Логотип теперь только в первой строке */
+}
+
+.logo-img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #d6b656;
+}
+
+/* Название портала */
+.header-title {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.header-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header-title a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+/* Кнопки навигации */
+.header-nav {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #4a3a6b;
+    background: #e1d5e7;
+    border: 1px solid #9673a6;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-btn:hover {
+    background: #9673a6;
+    color: #fff;
+    text-decoration: none;
+}
+
+.user-info {
+    margin-right: 10px;
+    font-size: 13px;
+    color: #333;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    padding: 6px 10px;
+    background: #e9ecef;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #6c757d;
+    margin-top: 5px; /* Небольшой отступ сверху */
+}
+
+.breadcrumbs a {
+    color: #0085fc;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.crumb-current {
+    color: #333;
+    font-weight: 500;
+}
+
+/* =========================================================
+   ОСНОВНОЙ КОНТЕНТ
+   ========================================================= */
+.site-main {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 24px 40px;
+}
+
+/* ---------- Кнопки ---------- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-family: inherit;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+    background: #d6b656;
+    color: #333;
+    border-color: #b89b3a;
+}
+
+.btn-primary:hover {
+    background: #c9a944;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background: #e1d5e7;
+    color: #4a3a6b;
+    border-color: #9673a6;
+}
+
+.btn-secondary:hover {
+    background: #9673a6;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* =========================================================
+   ПОДВАЛ
+   ========================================================= */
+   .site-footer {
+    flex-shrink: 0;
+    background: #2c2c2c;
+    color: #ddd;
+    font-size: 14px;
+    padding: 30px 24px;
+    border-top: 3px solid #d6b656;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    line-height: 1.6;
+}
+
+/* Выравнивание последней колонки (копирайта) по правому краю */
+.footer-col:last-child {
+    text-align: right;
+}
+
+/* =========================================================
+   СЛАЙДЕР НА ГЛАВНОЙ
+   ========================================================= */
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    height: 400px; 
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.slider-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Кнопки влево-вправо */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 30px;
+    color: #333;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.slider-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
+
+/* Точки-индикаторы */
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+.dot {
+    height: 14px;
+    width: 14px;
+    margin: 0 6px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active, .dot:hover {
+    background-color: #9673a6;
+}
+
+/* Блок с текстом под слайдером */
+.hero-text-block {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+/* =========================================================
+   ФОРМЫ ВХОДА И РЕГИСТРАЦИИ
+   ========================================================= */
+.auth {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid #e3e3e3;
+}
+
+.auth-title {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 28px;
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #222;
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input:focus {
+    border-color: #9673a6;
+    box-shadow: 0 0 0 3px rgba(150, 115, 166, 0.2);
+}
+
+.auth-submit {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    background: #e1d5e7;
+    color: #4a3a6b;
+    border: 1px solid #9673a6;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.auth-submit:hover {
+    background: #9673a6;
+    color: #fff;
+}
+
+.auth-alt {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #666;
+}
+
+/* =========================================================
+   ПОДСВЕТКА ОШИБОК В ФОРМАХ
+   ========================================================= */
+.form-input.is-invalid {
+    border-color: #dc3545 !important;
+    background-color: #fff8f8 !important;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15) !important;
+}
+
+.form-error {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* =========================================================
+   АДАПТИВНОСТЬ
+   ========================================================= */
+@media (max-width: 768px) {
+    .site-header {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .header-logo {
+        grid-row: 1; /* Исправлено для мобильных */
+    }
+
+    .header-title {
+        font-size: 22px;
+    }
+
+    .header-nav {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .breadcrumbs {
+        grid-row: 4;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .slider-container {
+        height: 250px;
+    }
+
+    .zayavka-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 15px;
+    }
+}
+/* =========================================================
+   ПЛАВНЫЕ АНИМАЦИИ И ПЕРЕХОДЫ
+   ========================================================= */
+
+/* 1. Плавное появление картинок в слайдере */
+.slider-slide {
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    /* Картинка будет немного отдаляться при появлении */
+    transform: scale(1.05); 
+}
+
+.slider-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 2. Плавное появление страниц (чтобы контент не "выскакивал" резко) */
+.site-main {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 3. Плавный эффект при наведении на карточки заявок */
+.zayavka-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zayavka-card:hover {
+    transform: translateY(-5px); /* Карточка чуть приподнимается */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Появляется тень */
+}
+
+/* 4. Плавное нажатие на кнопки */
+.btn, .nav-btn, .auth-submit {
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:active, .nav-btn:active, .auth-submit:active {
+    transform: scale(0.97); /* Кнопка чуть сжимается при клике */
+}
+/* =========================================================
+   ЕДИНЫЙ СТИЛЬ И АНИМАЦИЯ ДЛЯ ВСЕХ КНОПОК (КАК В ШАПКЕ)
+   ========================================================= */
+
+/* Применяем базовый фиолетовый стиль ко всем кнопкам и ссылкам-кнопкам */
+button, 
+.btn, 
+.nav-btn, 
+.auth-submit, 
+input[type="submit"] {
+    background-color: #e1d5e7 !important; /* Светло-фиолетовый фон */
+    color: #4a3a6b !important; /* Темно-фиолетовый текст */
+    border: 1px solid #9673a6 !important; /* Фиолетовая рамка */
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-family: inherit;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease !important;
+}
+
+/* Эффект при наведении (как в шапке) */
+button:hover, 
+.btn:hover, 
+.nav-btn:hover, 
+.auth-submit:hover, 
+input[type="submit"]:hover {
+    background-color: #9673a6 !important; /* Темно-фиолетовый фон */
+    color: #ffffff !important; /* Белый текст */
+    border-color: #7a5c8a !important;
+    text-decoration: none;
+}
+
+/* Активное нажатие (чуть сжимается) */
+button:active, 
+.btn:active, 
+.nav-btn:active, 
+.auth-submit:active, 
+input[type="submit"]:active {
+    transform: scale(0.97);
+}
+.footer-col {
+    text-align: center !important; /* Центрируем текст на телефоне */
+    min-width: 100%;
+}
